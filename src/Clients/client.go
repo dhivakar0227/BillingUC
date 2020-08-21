@@ -17,8 +17,12 @@ func main() {
 	}
 
 	defer cc.Close()
-
 	c := billingpb.NewBillingServiceClient(cc)
+
+	doUnary(c)
+}
+
+func doUnary(c billingpb.BillingServiceClient) {
 
 	s := &billingpb.SendInvoiceRequest{
 		Biller: &billingpb.Bill{
@@ -28,6 +32,12 @@ func main() {
 			InvoiceAmt:  2000,
 		},
 	}
+
 	sir, err := c.SendInvoice(context.Background(), s)
-	fmt.Println(sir)
+	if err != nil {
+		log.Fatalf("Error happened")
+	} else {
+		fmt.Println(sir)
+	}
+
 }
