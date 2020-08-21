@@ -24,7 +24,7 @@ func main() {
 		Biller: &billingpb.Bill{
 			FirstName:   "Dhivakar",
 			LastName:    "Jeganathan",
-			InvoiceDate: "8/21/2020",
+			InvoiceDate: "8/21/2021",
 			InvoiceAmt:  2000,
 		},
 	}
