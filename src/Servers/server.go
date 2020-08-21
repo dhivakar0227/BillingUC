@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	billingpb "Project/src/ProtoBuffers"
+	billingpb "github/billing/src/ProtoBuffers"
 
 	"google.golang.org/grpc"
 )

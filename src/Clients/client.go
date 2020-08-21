@@ -1,9 +1,9 @@
 package main
 
 import (
-	billingpb "Project/src/ProtoBuffers"
 	"context"
 	"fmt"
+	billingpb "github/billing/src/ProtoBuffers"
 	"log"
 
 	"google.golang.org/grpc"
