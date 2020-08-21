@@ -1,0 +1,1 @@
+protoc.exe -I=src\ProtoBuffers\ --go_out=plugins=grpc:src\ProtoBuffers\ src\ProtoBuffers\billing.proto
