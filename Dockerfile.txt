@@ -1,3 +1,10 @@
+# Move this file under github (one folder level up)
+# same level as BillingUC
+# RUN $docker build . -t grpcbillingserver
+# RUN $docker images # this should return grpcbillingserver running
+# RUN $ docker run -p 8080:8080 grpcbillingserver
+
+# install golang
 FROM golang
 
 # install protobuf from source
