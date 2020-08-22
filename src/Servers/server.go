@@ -3,8 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
 	"log"
 	"net"
+	"time"
 
 	billingpb "github/billing/src/ProtoBuffers"
 
@@ -36,4 +38,34 @@ func (*server) SendInvoice(ctx context.Context, req *billingpb.SendInvoiceReques
 		Result: result,
 	}
 	return &resp, nil
+}
+
+func (*server) ReceiveStreamInvoice(req *billingpb.ReceiveStreamInvoiceRequest, stream billingpb.BillingService_ReceiveStreamInvoiceServer) error {
+	firstName := req.Biller.GetFirstName()
+	result := "Hello " + firstName
+	for i := 0; i < 10; i++ {
+		resp := billingpb.ReceiveStreamInvoiceResponse{
+			Result: result,
+		}
+		stream.Send(&resp)
+		time.Sleep(1000 * time.Millisecond)
+	}
+	return nil
+}
+
+func (*server) SendStreamInvoice(stream billingpb.BillingService_SendStreamInvoiceServer) error {
+	result := " "
+	for {
+		req, err := stream.Recv()
+		if err == io.EOF {
+			return (stream.SendAndClose(&billingpb.SendStreamInvoiceResponse{
+				Result: result,
+			}))
+		}
+		if err != nil {
+			log.Fatalf("Server is not serving %v", err)
+		}
+
+		result = result + " " + req.Biller.GetFirstName()
+	}
 }

@@ -194,6 +194,194 @@ func (x *SendInvoiceResponse) GetResult() string {
 	return ""
 }
 
+type ReceiveStreamInvoiceRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Biller *Bill `protobuf:"bytes,1,opt,name=biller,proto3" json:"biller,omitempty"`
+}
+
+func (x *ReceiveStreamInvoiceRequest) Reset() {
+	*x = ReceiveStreamInvoiceRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_billing_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReceiveStreamInvoiceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReceiveStreamInvoiceRequest) ProtoMessage() {}
+
+func (x *ReceiveStreamInvoiceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_billing_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReceiveStreamInvoiceRequest.ProtoReflect.Descriptor instead.
+func (*ReceiveStreamInvoiceRequest) Descriptor() ([]byte, []int) {
+	return file_billing_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ReceiveStreamInvoiceRequest) GetBiller() *Bill {
+	if x != nil {
+		return x.Biller
+	}
+	return nil
+}
+
+type ReceiveStreamInvoiceResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result string `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+}
+
+func (x *ReceiveStreamInvoiceResponse) Reset() {
+	*x = ReceiveStreamInvoiceResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_billing_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReceiveStreamInvoiceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReceiveStreamInvoiceResponse) ProtoMessage() {}
+
+func (x *ReceiveStreamInvoiceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_billing_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReceiveStreamInvoiceResponse.ProtoReflect.Descriptor instead.
+func (*ReceiveStreamInvoiceResponse) Descriptor() ([]byte, []int) {
+	return file_billing_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ReceiveStreamInvoiceResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
+type SendStreamInvoiceRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Biller *Bill `protobuf:"bytes,1,opt,name=biller,proto3" json:"biller,omitempty"`
+}
+
+func (x *SendStreamInvoiceRequest) Reset() {
+	*x = SendStreamInvoiceRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_billing_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SendStreamInvoiceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendStreamInvoiceRequest) ProtoMessage() {}
+
+func (x *SendStreamInvoiceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_billing_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendStreamInvoiceRequest.ProtoReflect.Descriptor instead.
+func (*SendStreamInvoiceRequest) Descriptor() ([]byte, []int) {
+	return file_billing_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *SendStreamInvoiceRequest) GetBiller() *Bill {
+	if x != nil {
+		return x.Biller
+	}
+	return nil
+}
+
+type SendStreamInvoiceResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result string `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+}
+
+func (x *SendStreamInvoiceResponse) Reset() {
+	*x = SendStreamInvoiceResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_billing_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SendStreamInvoiceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendStreamInvoiceResponse) ProtoMessage() {}
+
+func (x *SendStreamInvoiceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_billing_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendStreamInvoiceResponse.ProtoReflect.Descriptor instead.
+func (*SendStreamInvoiceResponse) Descriptor() ([]byte, []int) {
+	return file_billing_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *SendStreamInvoiceResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
 var File_billing_proto protoreflect.FileDescriptor
 
 var file_billing_proto_rawDesc = []byte{
@@ -213,13 +401,41 @@ var file_billing_proto_rawDesc = []byte{
 	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x52, 0x06, 0x62, 0x69, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x2d,
 	0x0a, 0x13, 0x73, 0x65, 0x6e, 0x64, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0x5c, 0x0a,
-	0x0e, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
-	0x4a, 0x0a, 0x0b, 0x73, 0x65, 0x6e, 0x64, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x12, 0x1b,
-	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x73, 0x65, 0x6e, 0x64, 0x49, 0x6e, 0x76,
-	0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x62, 0x69,
-	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x73, 0x65, 0x6e, 0x64, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x62,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22, 0x44, 0x0a,
+	0x1b, 0x72, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e,
+	0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x06,
+	0x62, 0x69, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x62,
+	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x52, 0x06, 0x62, 0x69, 0x6c,
+	0x6c, 0x65, 0x72, 0x22, 0x36, 0x0a, 0x1c, 0x72, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22, 0x41, 0x0a, 0x18, 0x73,
+	0x65, 0x6e, 0x64, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x06, 0x62, 0x69, 0x6c, 0x6c, 0x65,
+	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x52, 0x06, 0x62, 0x69, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x33,
+	0x0a, 0x19, 0x73, 0x65, 0x6e, 0x64, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f,
+	0x69, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72,
+	0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73,
+	0x75, 0x6c, 0x74, 0x32, 0xa5, 0x02, 0x0a, 0x0e, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x53,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x4a, 0x0a, 0x0b, 0x73, 0x65, 0x6e, 0x64, 0x49, 0x6e,
+	0x76, 0x6f, 0x69, 0x63, 0x65, 0x12, 0x1b, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
+	0x73, 0x65, 0x6e, 0x64, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x73, 0x65, 0x6e,
+	0x64, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x67, 0x0a, 0x14, 0x72, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x53, 0x74, 0x72,
+	0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x12, 0x24, 0x2e, 0x62, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x72, 0x65, 0x63, 0x65, 0x69, 0x76, 0x65, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x25, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x72, 0x65, 0x63, 0x65, 0x69,
+	0x76, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x30, 0x01, 0x12, 0x5e, 0x0a, 0x11, 0x73,
+	0x65, 0x6e, 0x64, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65,
+	0x12, 0x21, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x73, 0x65, 0x6e, 0x64, 0x53,
+	0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x73, 0x65,
+	0x6e, 0x64, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x42, 0x0b, 0x5a, 0x09, 0x62,
 	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -235,21 +451,31 @@ func file_billing_proto_rawDescGZIP() []byte {
 	return file_billing_proto_rawDescData
 }
 
-var file_billing_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_billing_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_billing_proto_goTypes = []interface{}{
-	(*Bill)(nil),                // 0: billing.bill
-	(*SendInvoiceRequest)(nil),  // 1: billing.sendInvoiceRequest
-	(*SendInvoiceResponse)(nil), // 2: billing.sendInvoiceResponse
+	(*Bill)(nil),                         // 0: billing.bill
+	(*SendInvoiceRequest)(nil),           // 1: billing.sendInvoiceRequest
+	(*SendInvoiceResponse)(nil),          // 2: billing.sendInvoiceResponse
+	(*ReceiveStreamInvoiceRequest)(nil),  // 3: billing.receiveStreamInvoiceRequest
+	(*ReceiveStreamInvoiceResponse)(nil), // 4: billing.receiveStreamInvoiceResponse
+	(*SendStreamInvoiceRequest)(nil),     // 5: billing.sendStreamInvoiceRequest
+	(*SendStreamInvoiceResponse)(nil),    // 6: billing.sendStreamInvoiceResponse
 }
 var file_billing_proto_depIdxs = []int32{
 	0, // 0: billing.sendInvoiceRequest.biller:type_name -> billing.bill
-	1, // 1: billing.BillingService.sendInvoice:input_type -> billing.sendInvoiceRequest
-	2, // 2: billing.BillingService.sendInvoice:output_type -> billing.sendInvoiceResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 1: billing.receiveStreamInvoiceRequest.biller:type_name -> billing.bill
+	0, // 2: billing.sendStreamInvoiceRequest.biller:type_name -> billing.bill
+	1, // 3: billing.BillingService.sendInvoice:input_type -> billing.sendInvoiceRequest
+	3, // 4: billing.BillingService.receiveStreamInvoice:input_type -> billing.receiveStreamInvoiceRequest
+	5, // 5: billing.BillingService.sendStreamInvoice:input_type -> billing.sendStreamInvoiceRequest
+	2, // 6: billing.BillingService.sendInvoice:output_type -> billing.sendInvoiceResponse
+	4, // 7: billing.BillingService.receiveStreamInvoice:output_type -> billing.receiveStreamInvoiceResponse
+	6, // 8: billing.BillingService.sendStreamInvoice:output_type -> billing.sendStreamInvoiceResponse
+	6, // [6:9] is the sub-list for method output_type
+	3, // [3:6] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_billing_proto_init() }
@@ -294,6 +520,54 @@ func file_billing_proto_init() {
 				return nil
 			}
 		}
+		file_billing_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReceiveStreamInvoiceRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_billing_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReceiveStreamInvoiceResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_billing_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SendStreamInvoiceRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_billing_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SendStreamInvoiceResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -301,7 +575,7 @@ func file_billing_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_billing_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -327,7 +601,12 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type BillingServiceClient interface {
+	//unary
 	SendInvoice(ctx context.Context, in *SendInvoiceRequest, opts ...grpc.CallOption) (*SendInvoiceResponse, error)
+	// server streaming
+	ReceiveStreamInvoice(ctx context.Context, in *ReceiveStreamInvoiceRequest, opts ...grpc.CallOption) (BillingService_ReceiveStreamInvoiceClient, error)
+	// client streaming
+	SendStreamInvoice(ctx context.Context, opts ...grpc.CallOption) (BillingService_SendStreamInvoiceClient, error)
 }
 
 type billingServiceClient struct {
@@ -347,9 +626,80 @@ func (c *billingServiceClient) SendInvoice(ctx context.Context, in *SendInvoiceR
 	return out, nil
 }
 
+func (c *billingServiceClient) ReceiveStreamInvoice(ctx context.Context, in *ReceiveStreamInvoiceRequest, opts ...grpc.CallOption) (BillingService_ReceiveStreamInvoiceClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_BillingService_serviceDesc.Streams[0], "/billing.BillingService/receiveStreamInvoice", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &billingServiceReceiveStreamInvoiceClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type BillingService_ReceiveStreamInvoiceClient interface {
+	Recv() (*ReceiveStreamInvoiceResponse, error)
+	grpc.ClientStream
+}
+
+type billingServiceReceiveStreamInvoiceClient struct {
+	grpc.ClientStream
+}
+
+func (x *billingServiceReceiveStreamInvoiceClient) Recv() (*ReceiveStreamInvoiceResponse, error) {
+	m := new(ReceiveStreamInvoiceResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *billingServiceClient) SendStreamInvoice(ctx context.Context, opts ...grpc.CallOption) (BillingService_SendStreamInvoiceClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_BillingService_serviceDesc.Streams[1], "/billing.BillingService/sendStreamInvoice", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &billingServiceSendStreamInvoiceClient{stream}
+	return x, nil
+}
+
+type BillingService_SendStreamInvoiceClient interface {
+	Send(*SendStreamInvoiceRequest) error
+	CloseAndRecv() (*SendStreamInvoiceResponse, error)
+	grpc.ClientStream
+}
+
+type billingServiceSendStreamInvoiceClient struct {
+	grpc.ClientStream
+}
+
+func (x *billingServiceSendStreamInvoiceClient) Send(m *SendStreamInvoiceRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *billingServiceSendStreamInvoiceClient) CloseAndRecv() (*SendStreamInvoiceResponse, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(SendStreamInvoiceResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // BillingServiceServer is the server API for BillingService service.
 type BillingServiceServer interface {
+	//unary
 	SendInvoice(context.Context, *SendInvoiceRequest) (*SendInvoiceResponse, error)
+	// server streaming
+	ReceiveStreamInvoice(*ReceiveStreamInvoiceRequest, BillingService_ReceiveStreamInvoiceServer) error
+	// client streaming
+	SendStreamInvoice(BillingService_SendStreamInvoiceServer) error
 }
 
 // UnimplementedBillingServiceServer can be embedded to have forward compatible implementations.
@@ -358,6 +708,12 @@ type UnimplementedBillingServiceServer struct {
 
 func (*UnimplementedBillingServiceServer) SendInvoice(context.Context, *SendInvoiceRequest) (*SendInvoiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendInvoice not implemented")
+}
+func (*UnimplementedBillingServiceServer) ReceiveStreamInvoice(*ReceiveStreamInvoiceRequest, BillingService_ReceiveStreamInvoiceServer) error {
+	return status.Errorf(codes.Unimplemented, "method ReceiveStreamInvoice not implemented")
+}
+func (*UnimplementedBillingServiceServer) SendStreamInvoice(BillingService_SendStreamInvoiceServer) error {
+	return status.Errorf(codes.Unimplemented, "method SendStreamInvoice not implemented")
 }
 
 func RegisterBillingServiceServer(s *grpc.Server, srv BillingServiceServer) {
@@ -382,6 +738,53 @@ func _BillingService_SendInvoice_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BillingService_ReceiveStreamInvoice_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(ReceiveStreamInvoiceRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(BillingServiceServer).ReceiveStreamInvoice(m, &billingServiceReceiveStreamInvoiceServer{stream})
+}
+
+type BillingService_ReceiveStreamInvoiceServer interface {
+	Send(*ReceiveStreamInvoiceResponse) error
+	grpc.ServerStream
+}
+
+type billingServiceReceiveStreamInvoiceServer struct {
+	grpc.ServerStream
+}
+
+func (x *billingServiceReceiveStreamInvoiceServer) Send(m *ReceiveStreamInvoiceResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _BillingService_SendStreamInvoice_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(BillingServiceServer).SendStreamInvoice(&billingServiceSendStreamInvoiceServer{stream})
+}
+
+type BillingService_SendStreamInvoiceServer interface {
+	SendAndClose(*SendStreamInvoiceResponse) error
+	Recv() (*SendStreamInvoiceRequest, error)
+	grpc.ServerStream
+}
+
+type billingServiceSendStreamInvoiceServer struct {
+	grpc.ServerStream
+}
+
+func (x *billingServiceSendStreamInvoiceServer) SendAndClose(m *SendStreamInvoiceResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *billingServiceSendStreamInvoiceServer) Recv() (*SendStreamInvoiceRequest, error) {
+	m := new(SendStreamInvoiceRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _BillingService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "billing.BillingService",
 	HandlerType: (*BillingServiceServer)(nil),
@@ -391,6 +794,17 @@ var _BillingService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _BillingService_SendInvoice_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "receiveStreamInvoice",
+			Handler:       _BillingService_ReceiveStreamInvoice_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "sendStreamInvoice",
+			Handler:       _BillingService_SendStreamInvoice_Handler,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "billing.proto",
 }
