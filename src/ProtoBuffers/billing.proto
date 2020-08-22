@@ -34,6 +34,15 @@ message sendStreamInvoiceResponse {
     string result = 1;
 }
 
+message sendReceiveStreamInvoiceRequest {
+    bill biller = 1;
+}
+
+message sendReceiveStreamInvoiceResponse {
+    string result = 1;
+}
+
+
 service BillingService {
     //unary
     rpc sendInvoice (sendInvoiceRequest) returns (sendInvoiceResponse) {};
@@ -43,4 +52,7 @@ service BillingService {
 
     // client streaming
     rpc sendStreamInvoice(stream sendStreamInvoiceRequest) returns (sendStreamInvoiceResponse) {};
+
+    // client and server streaming
+    rpc sendReceiveStreamInvoice(stream sendReceiveStreamInvoiceRequest) returns (stream sendReceiveStreamInvoiceResponse) {};
 }

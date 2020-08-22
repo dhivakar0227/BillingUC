@@ -69,3 +69,31 @@ func (*server) SendStreamInvoice(stream billingpb.BillingService_SendStreamInvoi
 		result = result + " " + req.Biller.GetFirstName()
 	}
 }
+
+func (*server) SendReceiveStreamInvoice(stream billingpb.BillingService_SendReceiveStreamInvoiceServer) error {
+	result := " "
+	i := 0
+	for {
+		req, err := stream.Recv()
+
+		if err == io.EOF {
+			break
+		} else {
+			i++
+			result = req.Biller.GetLastName()
+			stream.Send(&billingpb.SendReceiveStreamInvoiceResponse{
+				Result: result,
+			})
+		}
+
+		if err != nil {
+			log.Fatalf("Server is not serving %v", err)
+		}
+
+		if i == 5 {
+			break
+		}
+	}
+	fmt.Println("Reached")
+	return nil
+}

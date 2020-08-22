@@ -25,7 +25,9 @@ func main() {
 
 	//doServerStream(c)
 
-	doClientStream(c)
+	// doClientStream(c)
+
+	doClientServerStream(c)
 }
 
 func doUnary(c billingpb.BillingServiceClient) {
@@ -109,4 +111,95 @@ func doClientStream(c billingpb.BillingServiceClient) {
 	}
 
 	fmt.Println(resp.Result)
+}
+
+func doClientServerStream(c billingpb.BillingServiceClient) {
+	stream, err := c.SendReceiveStreamInvoice(context.Background())
+	if err != nil {
+		log.Fatalf("error happened when starting the connection %v", err)
+	}
+	waitc := make(chan string)
+
+	go func() {
+		stream.Send(&billingpb.SendReceiveStreamInvoiceRequest{
+			Biller: &billingpb.Bill{
+				FirstName:   "Johnny",
+				LastName:    "Abraham1",
+				InvoiceDate: "08/22/2020",
+				InvoiceAmt:  4000,
+			},
+		})
+
+		time.Sleep(1000 * time.Millisecond)
+
+		stream.Send(&billingpb.SendReceiveStreamInvoiceRequest{
+			Biller: &billingpb.Bill{
+				FirstName:   "Jackie",
+				LastName:    "Abraham2",
+				InvoiceDate: "08/22/2020",
+				InvoiceAmt:  4000,
+			},
+		})
+		time.Sleep(1000 * time.Millisecond)
+
+		stream.Send(&billingpb.SendReceiveStreamInvoiceRequest{
+			Biller: &billingpb.Bill{
+				FirstName:   "Jackie",
+				LastName:    "Abraham3",
+				InvoiceDate: "08/22/2020",
+				InvoiceAmt:  4000,
+			},
+		})
+		time.Sleep(1000 * time.Millisecond)
+
+		stream.Send(&billingpb.SendReceiveStreamInvoiceRequest{
+			Biller: &billingpb.Bill{
+				FirstName:   "Jackie",
+				LastName:    "Abraham4",
+				InvoiceDate: "08/22/2020",
+				InvoiceAmt:  4000,
+			},
+		})
+		time.Sleep(1000 * time.Millisecond)
+
+		stream.Send(&billingpb.SendReceiveStreamInvoiceRequest{
+			Biller: &billingpb.Bill{
+				FirstName:   "Jackie",
+				LastName:    "Abraham5",
+				InvoiceDate: "08/22/2020",
+				InvoiceAmt:  4000,
+			},
+		})
+		time.Sleep(1000 * time.Millisecond)
+
+		stream.Send(&billingpb.SendReceiveStreamInvoiceRequest{
+			Biller: &billingpb.Bill{
+				FirstName:   "Jackie",
+				LastName:    "Abraham6",
+				InvoiceDate: "08/22/2020",
+				InvoiceAmt:  4000,
+			},
+		})
+		err = stream.CloseSend()
+		if err != nil {
+			log.Fatalf("error happened during close send")
+		}
+	}()
+
+	go func() {
+		for {
+			resp, err := stream.Recv()
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				log.Fatalf("error happened during receiving %v", err)
+				break
+			}
+			fmt.Println(resp.GetResult())
+		}
+		close(waitc)
+	}()
+
+	<-waitc
 }
