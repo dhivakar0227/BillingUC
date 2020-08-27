@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	billingpb "github/billing/src/ProtoBuffers"
 	"io"
 	"log"
 	"time"
+
+	billingpb "github.com/dhivakarj/BillingUC/src/ProtoBuffers"
 
 	"google.golang.org/grpc"
 )

@@ -8,7 +8,7 @@ import (
 	"net"
 	"time"
 
-	billingpb "github/billing/src/ProtoBuffers"
+	billingpb "github.com/dhivakarj/BillingUC/src/ProtoBuffers"
 
 	"google.golang.org/grpc"
 )
